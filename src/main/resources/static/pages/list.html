@@ -15,7 +15,7 @@
 	    <tr ng-repeat="item in items">
             <td>{{ item.id }}</td>
 			<td><a href="#/detail/{{ item.id }}">{{ item.name }}</a></td>
-			<td>{{ item.created | date:'MM/dd/yyyy' }}
+			<td>{{ item.createdAt | date:'dd-MMM-yyyy' }}
 			<td><i ng-click="removeItem(item)" class="icon-remove-sign"></i>
 	    </tr>
     </tbody>

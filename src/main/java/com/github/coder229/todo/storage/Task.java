@@ -1,6 +1,7 @@
 package com.github.coder229.todo.storage;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -13,7 +14,25 @@ public class Task implements Serializable {
 	@Id
 	private String id;
 	private String name;
+	private Date createdAt;
+	private Date updatedAt;
 	
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
 	public String getId() {
 		return id;
 	}
