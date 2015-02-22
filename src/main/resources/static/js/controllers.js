@@ -47,7 +47,7 @@ controllers.controller('itemDetailController', function ($scope, $routeParams, $
 	console.log("item detail");
 	$scope.item = { created: new Date() };
 
-	if ($routeParams.itemId > 0) {
+	if ($routeParams.itemId != undefined) {
 		$http.get('task/' + $routeParams.itemId).success(function(data, status, headers, config) {
 			$scope.item = data;
 		});

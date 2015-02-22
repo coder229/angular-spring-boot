@@ -31,9 +31,11 @@ public class TaskController {
 		return repository.save(task);
 	}
 
-	@RequestMapping(value="/task",method=RequestMethod.PUT)
-	public @ResponseBody Task update(@RequestBody Task task) {
-		return repository.save(task);
+	@RequestMapping(value="/task/{id}",method=RequestMethod.PUT)
+	public @ResponseBody Task update(@PathVariable("id") String id, @RequestBody Task task) {
+		Task found = repository.findOne(id);
+		found.setName(task.getName());
+		return repository.save(found);
 	}
 
 	@RequestMapping(value="/task/{id}",method=RequestMethod.DELETE)
